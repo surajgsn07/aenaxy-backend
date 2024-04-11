@@ -92,6 +92,15 @@ const registerUser = asyncHandler(async(req,res)=>{
     )
 })
 
+const hello = asyncHandler(async(req,res)=>{
+    return res.json(
+        new ApiResponse(
+            200,
+            {msg : "hello"}
+            ,"success"
+        )
+    )
+})
 
 const setAvatar = asyncHandler(async(req,res)=>{
     const userId = req.user?._id;
@@ -379,5 +388,6 @@ export {
     setPurpose,
     checkUsername,
     checkEmail,
-    sendEmail
+    sendEmail,
+    hello
 }

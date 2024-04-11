@@ -6,12 +6,14 @@ import  {
     setPurpose,
     checkUsername,
     checkEmail,
-    sendEmail
+    sendEmail,
+    hello
 } from '../controllers/user.controller.js'
 import { verifyJwt } from "../middlewares/auth.middleware.js";
 import {uploadImage} from '../middlewares/multer.middleware.js'
 const router = Router();
 
+router.route("/hello").post(hello)
 router.route("/register").post(registerUser);
 router.route("/setAvatar").post(verifyJwt,uploadImage.single("avatar") , setAvatar);
 router.route("/setLocation").post(verifyJwt , setLocation);
