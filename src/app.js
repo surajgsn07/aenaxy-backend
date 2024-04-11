@@ -4,7 +4,7 @@ import cors from 'cors'
 const app = express()
 
 app.use(cors({
-    origin: 'https://aeonaxy-frontend-psi.vercel.app/',
+    origin: 'https://aeonaxy-frontend-psi.vercel.app',
     credentials:true
 }))
 
