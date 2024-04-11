@@ -13,7 +13,7 @@ import { verifyJwt } from "../middlewares/auth.middleware.js";
 import {uploadImage} from '../middlewares/multer.middleware.js'
 const router = Router();
 
-router.route("/hello").post(hello)
+router.route("/hello").get(hello)
 router.route("/register").post(registerUser);
 router.route("/setAvatar").post(verifyJwt,uploadImage.single("avatar") , setAvatar);
 router.route("/setLocation").post(verifyJwt , setLocation);
